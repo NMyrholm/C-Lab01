@@ -15,7 +15,7 @@ namespace Lab01
         private static void Search(string input)
         {
             long total = 0;
-            int firstIndex = 0;
+            var firstIndex = 0;
             foreach (char firstNumber in input)
             {
                 var marked = "";

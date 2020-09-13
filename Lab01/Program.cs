@@ -7,7 +7,7 @@ namespace Lab01
         static void Main(string[] args)
         {
             Console.Write("Skriv in en söksträng: ");
-            string input = Console.ReadLine();
+            var input = Console.ReadLine();
             Console.WriteLine();
             Search(input);
         }
@@ -15,12 +15,12 @@ namespace Lab01
         private static void Search(string input)
         {
             long total = 0;
-            int firstIndex = 0;
+            var firstIndex = 0;
             foreach (char firstNumber in input)
             {
                 var marked = "";
                 var secondIndex = firstIndex+1;
-                foreach (char secondNumber in input.Substring(secondIndex))
+                foreach (var secondNumber in input.Substring(secondIndex))
                 {
                     if (secondNumber == firstNumber)
                     {

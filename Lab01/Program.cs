@@ -12,25 +12,31 @@ namespace Lab01
             Search(input);
         }
 
-        private static void Search(string input)
+        static void Search(string input)
         {
             long total = 0;
             var firstIndex = 0;
-            foreach (char firstNumber in input)
+            foreach (var firstNumber in input)
             {
                 var marked = "";
-                var secondIndex = firstIndex+1;
+                var secondIndex = firstIndex + 1;
                 foreach (var secondNumber in input.Substring(secondIndex))
                 {
                     if (secondNumber == firstNumber)
                     {
-                        marked += input.Substring(firstIndex, secondIndex-firstIndex + 1);
-                        Console.Write(input.Substring(0, firstIndex)); //Before the marked number
+                        marked += input.Substring(firstIndex, secondIndex - firstIndex + 1);
+
+                        //Before the marked number
+                        Console.Write(input.Substring(0, firstIndex));
+
+                        //The marked numbers
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.Write(marked);  //The marked numbers
+                        Console.Write(marked);
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.Write(input.Substring(secondIndex+1));   //The rest of the string
-                        Console.WriteLine();
+
+                        //The rest of the string
+                        Console.WriteLine(input.Substring(secondIndex + 1));
+
                         total += long.Parse(marked);
                         break;
                     }
